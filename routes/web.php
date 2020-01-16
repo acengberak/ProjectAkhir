@@ -24,4 +24,4 @@ Route::prefix('admin')->namespace('Admin')->middleware(['auth', 'admin'])->group
     Route::get('/', 'DashboardController@index')->name('dashboard');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
