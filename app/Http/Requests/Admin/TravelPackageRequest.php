@@ -13,7 +13,7 @@ class TravelPackageRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -30,10 +30,10 @@ class TravelPackageRequest extends FormRequest
             'featured_event' => 'required|max:255',
             'language' => 'required|max:255',
             'foods' => 'required|max:255',
-            'depature_date' => 'required|date',
+            'departure_date' => 'required|date',
             'duration' => 'required|max:255',
             'type' => 'required|max:255',
-            'price' => 'required|integer',
+            'price' => 'required|integer'
         ];
     }
 }
