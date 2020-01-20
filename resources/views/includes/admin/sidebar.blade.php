@@ -20,14 +20,14 @@
 
      <!-- Nav Item - Dashboard -->
      <li class="nav-item active">
-      <a class="nav-link" href="{{route('travel-package.index')}}">
+      <a class="nav-link" href="{{ route('travel-package.index') }}">
         <i class="fas fa-fw fa-hotel"></i>
         <span>Paket Data</span></a>
     </li>
     
      <!-- Nav Item - Dashboard -->
      <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="{{ route('gallery.index') }}">
         <i class="fas fa-fw fa-images"></i>
         <span>Galeri Data</span></a>
     </li>

@@ -28,7 +28,7 @@
                 @endif
                 <div class="card shadow">
                     <div class="card-body">
-                        <form action="{{ route('travel-package.store') }}" method="post">
+                        <form action="{{ route('gallery.store') }}" method="post">
                          @csrf
                          {{-- TITTLE --}}
                             <div class="form-group">

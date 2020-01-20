@@ -12,7 +12,7 @@
     </div>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tambah Travel Package</h1>
+        <h1 class="h3 mb-0 text-gray-800">Tambah Gallery</h1>
     </div>
     <div class="row">
         <div class="card-body">
@@ -28,7 +28,7 @@
                 @endif
                 <div class="card shadow">
                     <div class="card-body">
-                        <form action="{{ route('travel-package.store') }}" method="post">
+                        <form action="{{ route('gallery.store') }}" method="post">
                          @csrf
                          {{-- TITTLE --}}
                             <div class="form-group">
