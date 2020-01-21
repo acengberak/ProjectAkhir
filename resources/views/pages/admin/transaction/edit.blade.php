@@ -12,7 +12,7 @@
     </div>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Tambah Gallery</h1>
+        <h1 class="h3 mb-0 text-gray-800">Update Transaksi</h1>
     </div>
     <div class="row">
         <div class="card-body">
@@ -27,25 +27,25 @@
                 </div>
                 @endif
                 <div class="card shadow">
-                    <div class="card-body">
-                        <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
+                    <div class="card-body">                 
+                        <form action="{{ route('transaction.update', $item->id) }}" method="post">
+                         @method('PUT')
                          @csrf
                           <div class="form-group">
-                            <label for="travel_packages_id">Paket Travel</label>
-                            <select class="form-control" name="travel_packages_id" required>
-                              <option value="">Pilih Paket</option> 
-                              @foreach ($travel_packages as $travel_package)
-                                  <option value="{{ $travel_package->id }}">
-                                    {{ $travel_package->title }}
-                                  </option>
-                              @endforeach
+                            <label for="transactions_status">Status</label>
+                            <select class="form-control" name="transactions_status" required>
+                              <option value="{{ $item->transactions_status }}">
+                                jangan Di Ubah ({{ $item->transactions_status }})
+                              </option>
+                              
+                                <option value="IN_CHART">In Chart</option>
+                                <option value="PENDING">Pending</option>
+                                <option value="SUCCESS">Success</option>
+                                <option value="CANCEL">Cancel</option>
+                                <option value="FAILED">Failed</option>
                             </select>
                           </div>
-                            <div class="form-group">
-                              <label for="image">Image</label>
-                              <input type="file" name="image" placeholder="Masukkan gambar" class="form-controller">
-                            </div>
-                           <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                          <button type="submit" class="btn btn-primary btn-block">Update</button>
                         </form>
                     </div>
                 </div>

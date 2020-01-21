@@ -48,7 +48,7 @@ class TravelPackageController extends Controller
         $data['slug'] = Str::slug($request->title);
         TravelPackage::create($data);
 
-        return redirect('travel-package.index');
+        return redirect()->route('travel-package.index');
     }
 
     /**

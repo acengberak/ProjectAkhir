@@ -91,7 +91,7 @@
                             <small id="helpId" class="text-muted">Price</small>
                           </div>
                           <a href="">
-                           <script> alert('Data tersimpan')<button type="submit" class="btn btn-primary btn-block">Simpan</button></script>
+                           <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                           </a>
                           
                         </form>

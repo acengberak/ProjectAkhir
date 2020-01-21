@@ -29,68 +29,18 @@
                 <div class="card shadow">
                     <div class="card-body">
                       
-                        <form action="{{ route('gallery.update', $item->id) }}" method="post">
+                        <form action="{{ route('gallery.update', $item->id) }}" method="post" enctype="multipart/form-data">
                          @method('PUT')
                          @csrf
-                         {{-- TITTLE --}}
-                            <div class="form-group">
-                              <label for="title">Title</label>
-                              <input type="text" name="title" id="title" class="form-control" placeholder="Isi Title" aria-describedby="helpId" value="{{ $item->title }}">
-                              <small id="helpId" class="text-muted">Title</small>
-                            </div>
-                         {{-- LOCATION --}}
                          <div class="form-group">
-                            <label for="location">Location</label>
-                            <input type="text" name="location" id="location" class="form-control" placeholder="Isi Lokasi" aria-describedby="helpId" value="{{ $item->location }}">
-                            <small id="helpId" class="text-muted">Lokasi</small>
-                          </div>
-                          {{-- About --}}
+                          <label for="travel_packages_id">Paket Travel</label>
+                          <select class="form-control" name="travel_packages_id" required>
+                            <option value="">{{$item->travel_package->title}}</option>  
+                          </select>
+                        </div>
                           <div class="form-group">
-                            <label for="about">About</label>
-                            <textarea name="about" id="about" class="form-control" placeholder="Isi About" aria-describedby="helpId" value="{{ $item->about }}" rows="10"></textarea>
-                            <small id="helpId" class="text-muted">About</small>
-                          </div>
-                          {{-- FEATURED EVENT --}}
-                          <div class="form-group">
-                            <label for="featured_event">Featured Event</label>
-                            <input type="text" name="featured_event" id="featured_event" class="form-control" placeholder="Featured Event" aria-describedby="helpId" value="{{ $item->featured_event }}">
-                            <small id="helpId" class="text-muted">Featured Event</small>
-                          </div>
-                          {{-- Language --}}
-                          <div class="form-group">
-                            <label for="language">Language</label>
-                            <input type="text" name="language" id="language" class="form-control" placeholder="Isi Language" aria-describedby="helpId" value="{{ $item->language }}">
-                            <small id="helpId" class="text-muted">Language</small>
-                          </div>
-                          {{-- FOODS --}}
-                          <div class="form-group">
-                            <label for="foods">Foods</label>
-                            <input type="text" name="foods" id="foods" class="form-control" placeholder="Isi Foods" aria-describedby="helpId" value="{{ $item->foods}}">
-                            <small id="helpId" class="text-muted">Foods</small>
-                          </div>
-                          {{-- DEPARTURE DATE --}}
-                          <div class="form-group">
-                            <label for="departure_date">Departure Date</label>
-                            <input type="date" name="departure_date" id="departure_date" class="form-control" placeholder="Isi Departure Date" aria-describedby="helpId" value="{{ $item->departure_date }}">
-                            <small id="helpId" class="text-muted">Departure Date</small>
-                          </div>
-                          {{-- DURATION --}}
-                          <div class="form-group">
-                            <label for="duration">Duration</label>
-                            <input type="text" name="duration" id="duration" class="form-control" placeholder="Isi Duration" aria-describedby="helpId" value="{{ $item->duration }}">
-                            <small id="helpId" class="text-muted">Duration</small>
-                          </div>
-                          {{-- TYPE --}}
-                          <div class="form-group">
-                            <label for="type">Type</label>
-                            <input type="text" name="type" id="type" class="form-control" placeholder="Isi Type" aria-describedby="helpId" value="{{ $item->type }}">
-                            <small id="helpId" class="text-muted">Type</small>
-                          </div>
-                          {{-- PRICE --}}
-                          <div class="form-group">
-                            <label for="price">Price</label>
-                            <input type="text" name="price" id="price" class="form-control" placeholder="Isi Price" aria-describedby="helpId" value="{{ number_format($item->price) }}">
-                            <small id="helpId" class="text-muted">Price</small>
+                            <label for="image">Image</label>
+                            <input type="file" name="image" placeholder="Masukkan gambar" class="form-controller">
                           </div>
                           <button type="submit" class="btn btn-primary btn-block">Update</button>
                         </form>
